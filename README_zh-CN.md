@@ -1,21 +1,19 @@
 # node-seeta-js
-Node.js wrap for [SeetaFaceEngine](seetaface/SeetaFaceEngine)
+[SeetaFaceEngine](seetaface/SeetaFaceEngine) 的 Node.js 插件安装
 
-see those docs for more info about it:
+算法请参考以下文档:
 
 - [Face Detection](docs/facedect.md)
 - [Face Aligment](docs/facealign.md)
 - [Face Identification](docs/viplnet.md)
 
-see other language version:
+## 使用方法
 
-- [中文](README_zh-CN.md)
+需要 [SeetaFaceEngine](seetaface/SeetaFaceEngine) 提供的模型. 你可以从 **[这里](https://drive.google.com/drive/folders/1JpPsdfMO3yqyX0Cj9eNO1wgXgFNuZOk6?usp=sharing)** 手动下载.
 
-## Usage
+针对国人用户，请使用中科院提供的[团队文档库](http://ddl.escience.cn/t/bm9kZS1zZWV0YQ==)获取备用链接.
 
-require [SeetaFaceEngine](seetaface/SeetaFaceEngine) models. you may manually down them [HERE](https://drive.google.com/drive/folders/1JpPsdfMO3yqyX0Cj9eNO1wgXgFNuZOk6?usp=sharing).
-
-1. Basic usage
+1. 基本用法
 
 ```js
 /*
@@ -46,4 +44,4 @@ seeta.loadImage(imagePath, (err, destPath) => {
 
 ```
 
-see [example/with-callback.js](example/with-callback.js) for more detail.
+参考 [example/with-callback.js](example/with-callback.js) 了解更多细节.
