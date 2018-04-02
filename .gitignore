@@ -57,3 +57,15 @@ typings/
 # dotenv environment variables file
 .env
 
+# Seetaface engine model files
+models/
+
+# build folder
+build/
+
+# data folder
+data/
+
+# macOS desktop store files
+**/.DS_Store
+.DS_Store
