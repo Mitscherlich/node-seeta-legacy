@@ -7,7 +7,8 @@
         'src/lodepng.cpp',
 
         'src/seeta.cc',
-        'src/face_detect.cc'
+        'src/face_detect.cc',
+        'src/face_align.cc'
       ],
 
       'cflags': [ '-Wall', '-Wextra', '-pedantic', '-ansi', '-O3' ],

@@ -3,8 +3,6 @@
 
 #include <nan.h>
 
-NAN_METHOD(DetectSync);
-
 NAN_METHOD(DetectAsync);
 
 #endif // SEETA_FACE_DETECT_H_

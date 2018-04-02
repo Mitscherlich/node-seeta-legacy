@@ -10,6 +10,8 @@ namespace seeta_v8 {
 
 const char *ParseFaceInfo(seeta::FaceInfo &face);
 
+const char *ParseFacialLandmark(seeta::FacialLandmark &point);
+
 void LoadImage(seeta::ImageData &imageData, const char *imagePath);
 
 }

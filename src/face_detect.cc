@@ -1,4 +1,3 @@
-#include <string>
 #include <vector>
 
 #include "face_detection.h"
@@ -55,7 +54,7 @@ public:
 
 private:
   ImageData image;  // to be detected struct 'ImageData'
-    
+
   string result;    // face detection result string
   string modelPath;  // model file path
   string imagePath;  // png file path
