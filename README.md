@@ -1,4 +1,4 @@
-# node-seeta-js
+# node-seeta
 Node.js wrap for [SeetaFaceEngine](seetaface/SeetaFaceEngine)
 
 see those docs for more info about it:
@@ -14,6 +14,21 @@ see other language version:
 ## Usage
 
 require [SeetaFaceEngine](seetaface/SeetaFaceEngine) models. you may manually down them [HERE](https://drive.google.com/drive/folders/1JpPsdfMO3yqyX0Cj9eNO1wgXgFNuZOk6?usp=sharing).
+
+also, dependent on [ImageMagick](https://github.com/ImageMagick/ImageMagick) for grayscaling RGBA image.
+you can install it on macOS with [Homebrew](https://brew.sh/) using following command:
+
+```bash
+$ brew install imagemagick [--with-webp]
+```
+
+0. Install from [NPM](https://www.npmjs.com/package/seeta)
+
+install as a dependency.
+
+```bash
+$ npm i -S seeta
+```
 
 1. Basic usage
 

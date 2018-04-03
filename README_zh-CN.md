@@ -1,4 +1,4 @@
-# node-seeta-js
+# node-seeta
 [SeetaFaceEngine](seetaface/SeetaFaceEngine) 的 Node.js 插件安装
 
 算法请参考以下文档:
@@ -12,6 +12,21 @@
 需要 [SeetaFaceEngine](seetaface/SeetaFaceEngine) 提供的模型. 你可以从 **[这里](https://drive.google.com/drive/folders/1JpPsdfMO3yqyX0Cj9eNO1wgXgFNuZOk6?usp=sharing)** 手动下载.
 
 针对国人用户，请使用中科院提供的[团队文档库](http://ddl.escience.cn/t/bm9kZS1zZWV0YQ==)获取备用链接.
+
+同时依赖于 [ImageMagick](https://github.com/ImageMagick/ImageMagick) 来灰度化图像.
+你可以在 macOS 系统上使用 [Homebrew](https://brew.sh/) 安装, 参考下面的命令:
+
+```bash
+$ brew install imagemagick [--with-webp]
+```
+
+0. 从 [NPM](https://www.npmjs.com/package/seeta) 安装
+
+作为依赖安装.
+
+```bash
+$ npm i -S seeta
+```
 
 1. 基本用法
 
