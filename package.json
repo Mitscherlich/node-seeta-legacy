@@ -1,6 +1,6 @@
 {
   "name": "seeta",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Node.js wrap for SeetaFaceEngine",
   "main": "lib/seeta.js",
   "directories": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "DEBUG=node-seeta:* mocha",
-    "install": "node-gyp rebuild"
+    "install": "node-gyp rebuild --release"
   },
   "repository": {
     "type": "git",

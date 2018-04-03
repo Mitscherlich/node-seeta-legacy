@@ -58,7 +58,7 @@ typings/
 .env
 
 # Seetaface engine model files
-models/*.bin
+models/
 
 # macOS desktop store files
 **/.DS_Store
