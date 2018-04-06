@@ -47,12 +47,12 @@ const frModelPath = '/path/to/models/seeta_fr_v1.0.bin';
 
 seeta.loadImage(imagePath, (err, destPath) => {
 
-  seeta.detect(image, faModelPath, (err, result) => {
+  seeta.detect(destPath, faModelPath, (err, result) => {
     // result looks like '{ "faces": [ [ x, y, width, height ], ... ] }'
     console.log(JSON.parse(result));
   });
 
-  seeta.align(image, faModelPath, faModelPath, (err, result) => {
+  seeta.align(destPath, faModelPath, faModelPath, (err, result) => {
     // result looks like '{ "faces": [ { "points": [ x, y ] }, ... }'
     console.log(JSON.parse(result));
   });
