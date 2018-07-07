@@ -36,7 +36,7 @@ $ make
 $ [sudo] make PREFIX=/usr/local/OpenBLAS install
 ```
 
-This module also requires [SeetaFaceEngine2](https://github.com/seetaface/SeetaFaceEngine2) models. You may manually down them from [HERE](http://115.159.114.29:8090/s/wNzPNdA7w8FPaZK).
+This module also requires [SeetaFaceEngine2](https://github.com/seetaface/SeetaFaceEngine2) models. You may manually down them from [HERE](https://pan.baidu.com/s/1HJj8PEnv3SOu6ZxVpAHPXg).
 
 ### Installation
 
@@ -55,6 +55,144 @@ $ git clone -b stable --depth 1 https://github.com/Mitscherlich/node-seeeta.git 
 ```
 
 ## Usage
+
+### Face detection
+
+Detect face(s) in a image.
+
+```js
+const FaceDetection = require('seeta').FaceDetection
+const path = require('path')
+// 1. name face detection model path.
+const fdModel = path.join('path', 'to', 'models/SeetaFaceDetector2.0.ats')
+// 2. create a detector
+const detector = new FaceDetection(fdModel)
+// 3. detect face(s) in a image
+const results = detector.detect(path.join('path', 'to', 'image/test.png'))
+console.log({ result })
+// result will in this form:
+// {
+//   "count": Number,     // count of face(s)
+//   "data": {
+//     "faces": [{
+//       "x": Number,     // face left-upper point x
+//       "y": Number,     // face left-upper point y
+//       "width": Number, // face bounding box width
+//       "height": Number // face bounding box height
+//     }]
+//   }
+// }
+```
+
+### Facial points detection
+
+Mark facial points for compare and recognize.
+
+```js
+const { FaceDetection, PointDetector } = require('seeta')
+const path = require('path')
+// 1. name detector models path.
+const fdModel = path.join('path', 'to', 'models/SeetaFaceDetector2.0.ats')
+const faModel = path.join('path', 'to', 'models/SeetaPointDetector2.0.pts5.ats')
+// 2. create a point detector
+const detector = new FaceDetection(fdModel)
+const pointer = new PointDetector(faModel)
+// 3. detect face(s) in a image
+const faces = detector.detect(path.join('path', 'to', 'image/test.png'))
+if (faces.data && face.data.faces.length) {
+  const points = pointer.detect(path.join('path', 'to', 'image/test.png', faces.data.faces[0]))
+  console.log({ result })
+}
+// result will in this form:
+// {
+//   "data": {
+//     "points": [{
+//       "x": Number,     // facial point x
+//       "y": Number,     // facial point y
+//     }]
+//   }
+// }
+```
+
+### Face recognize
+
+1. `1 vs 1` compare
+
+compare two image contains face and compare for its similar.
+
+```js
+const { FaceDetector, PointDetector, FaceRecognizer } = require('seeta')
+const path = require('path')
+// 1. name detector models path.
+const fdModel = path.join('path', 'to', 'models/SeetaFaceDetector2.0.ats')
+const faModel = path.join('path', 'to', 'models/SeetaPointDetector2.0.pts5.ats')
+const frModel = path.join('path', 'to', 'models/SeetaFaceRecognizer2.0.ats')
+// 2. create detectors
+console.time('initailize')
+const detector = new FaceDetector(fdModel)
+const pointer = new PointDetector(faModel)
+const recognizer = new FaceRecognizer(frModel)
+console.timeEnd('initailize')
+// 3. detect face(s) in a image
+const imagePath = join('path', 'to', 'data/test.png')
+
+const faces = detector.detect(imagePath)
+const face1 = faces.data.faces[0]
+const face2 = faces.data.faces[1]
+
+const points1 = pointer.detect(imagePath, face1).data.points
+const points2 = pointer.detect(imagePath, face2).data.points
+// 4. compare face(s) in two images
+const similar = recognizer.compare(
+  { path: imagePath, points: points1 }, { path: imagePath, points: points1 }
+)
+console.log({ similar })
+```
+
+2. `1 vs n` compare
+
+- first: register a image
+
+```js
+const { FaceDetector, PointDetector, FaceRecognizer } = require('seeta')
+const path = require('path')
+// 1. name detector models path.
+const fdModel = path.join('path', 'to', 'models/SeetaFaceDetector2.0.ats')
+const faModel = path.join('path', 'to', 'models/SeetaPointDetector2.0.pts5.ats')
+const frModel = path.join('path', 'to', 'models/SeetaFaceRecognizer2.0.ats')
+// 2. create detectors
+console.time('initailize')
+const detector = new FaceDetector(fdModel)
+const pointer = new PointDetector(faModel)
+const recognizer = new FaceRecognizer(frModel)
+console.timeEnd('initailize')
+// 3. detect face(s) in a image
+const imagePath = path.join('path', 'to', 'data/test.png')
+
+const faces = detector.detect(imagePath)
+const face = faces.data.faces[0]
+
+const points = pointer.detect(imagePath, face1).data.points
+// 4. register a face
+const index = recognizer.register(imagePath, points)
+console.log({ index }) // ==> the index in recognizer face database
+```
+
+- find all similar in database
+
+```js
+// 5. detect face(s) in a image
+const newImage = path.join('path', 'to', 'data/another_image.png')
+const faces1 = detector.detect(newImage)
+const face1 = faces1.data.faces[0]
+
+const points1 = pointer.detect(newImage, face1).data.points
+// 6. find all similar in database
+const results = recognizer.recognition(newImage, face1)
+if (result.data && result.data.length) {
+  console.log({ similars: result.data }) // ==> all similars in face databse
+}
+```
 
 ## License
 
