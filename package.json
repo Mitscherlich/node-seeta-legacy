@@ -1,6 +1,6 @@
 {
   "name": "seeta",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Node.js wrap for SeetaFaceEngine",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,7 @@
     "url": "https://github.com/Mitscherlich/node-seeta/issues"
   },
   "homepage": "https://github.com/Mitscherlich/node-seeta#README",
-  "devDependencies": {
+  "dependencies": {
     "node-cmake": "^2.5.1"
   }
 }
