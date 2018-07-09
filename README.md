@@ -7,6 +7,32 @@ see other language version:
 
 ## Install
 
+### System require
+
+- Ubuntu 16.04 x86_64
+
+```yaml
+minium:
+  memory: 2GB
+  CPU: 1core with 1GHz
+  GPU: Not necessary
+
+recommend:
+  memory: 4GB
+  CPU: 4core with 2.1GHz
+  GPU: if better
+```
+
+- Windows 10 (x86/x86_64)
+
+```yaml
+compile enviroment:
+  - Visual Studio 2013 / 2015 (msvc require v120 v140 or v141)
+  - minGW
+  - CMake for windows
+  - Node.js (lts/carbon)
+```
+
 ### Dependencies
 
 [OpenCV](https://github.com/opencv/opencv) is required to compile. You may use the following commands to install OpenCV:
@@ -39,6 +65,14 @@ $ [sudo] make PREFIX=/usr/local/OpenBLAS install
 This module also requires [SeetaFaceEngine2](https://github.com/seetaface/SeetaFaceEngine2) models. You may manually down them from [HERE](https://pan.baidu.com/s/1HJj8PEnv3SOu6ZxVpAHPXg).
 
 ### Installation
+
+0. install `node-cmake` for compiling
+
+make sure you have setup `cmake` correctly.
+
+```bash
+$ npm i -g node-cmake
+```
 
 1. via [npm.js](https://www.npmjs.com/package/seeta)
 

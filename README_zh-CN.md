@@ -3,6 +3,32 @@
 
 ## 如何安装
 
+### 系统需求
+
+- Ubuntu 16.04 x86_64
+
+```yaml
+最低配置:
+  内存: 2GB
+  CPU: 1core with 1GHz
+  GPU: Not necessary
+
+推荐配置:
+  内存: 4GB
+  CPU: 4core with 2.1GHz
+  GPU: if better
+```
+
+- Windows 10 (x86/x86_64)
+
+```yaml
+编译环境:
+  - Visual Studio 2013 / 2015 (msvc 支持 v120 v140 or v141)
+  - minGW
+  - CMake for windows
+  - Node.js (lts/carbon)
+```
+
 ### 依赖
 
 需要 [OpenCV](https://github.com/opencv/opencv)。你可以参考下面的命令来安装 OpenCV:
@@ -35,6 +61,14 @@ $ [sudo] make PREFIX=/usr/local/OpenBLAS install
 需要 [SeetaFaceEngine2](https://github.com/seetaface/SeetaFaceEngine2) 预编译的模型. 你可以从[这里](https://pan.baidu.com/s/1HJj8PEnv3SOu6ZxVpAHPXg)手动下载他们.
 
 ### 安装
+
+0. 编译依赖 `node-cmake`
+
+请确保你以正确安装 `cmake`.
+
+```bash
+$ npm i -g node-cmake
+```
 
 1. 通过 [npm.js](https://www.npmjs.com/package/seeta)
 
