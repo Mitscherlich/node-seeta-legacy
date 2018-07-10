@@ -14,6 +14,7 @@ namespace v8 {
   }
 
   FaceRecognizer::~FaceRecognizer() {
+    if (holder) delete holder;
   }
 
   void FaceRecognizer::init(Local<Object> exports) {
@@ -71,7 +72,7 @@ namespace v8 {
       args.GetReturnValue().Set(args.This());
     } else {
       isolate->ThrowException(Exception::TypeError(
-          String::NewFromUtf8(isolate, "Don not use as a normal function.")));
+          String::NewFromUtf8(isolate, "Do not use as a normal function.")));
     }
   }
 

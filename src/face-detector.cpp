@@ -14,6 +14,7 @@ namespace v8 {
   }
 
   FaceDetector::~FaceDetector() {
+    if (holder) delete holder;
   }
 
   void FaceDetector::init(Local<Object> exports) {
@@ -38,13 +39,13 @@ namespace v8 {
 
     if (args.Length() < 1) {
       // Throw an Error that is passed back to JavaScript
-      isolate->ThrowException(Exception::TypeError(
+      isolate->ThrowException(Exception::Error(
           String::NewFromUtf8(isolate, "Too few arguments: Except 1 but got 0. 'modelPath' is needed in arguments.")));
       return;
     }
 
     if (!args[0]->IsString()) {
-      isolate->ThrowException(Exception::TypeError(
+      isolate->ThrowException(Exception::Error(
           String::NewFromUtf8(isolate, "Except 'modelPath' should be a 'string'.")));
       return;
     }
@@ -58,7 +59,7 @@ namespace v8 {
       if (!fin) {
         std::cout << "Model file not exist." << std::endl
                   << "You can download prebuild bindata here: https://pan.baidu.com/s/1HJj8PEnv3SOu6ZxVpAHPXg" << std::endl;
-        isolate->ThrowException(Exception::TypeError(
+        isolate->ThrowException(Exception::Error(
           String::NewFromUtf8(isolate, ("Cannot locate model file in path: " + modelPath_).c_str())));
         return;
       }
@@ -68,7 +69,7 @@ namespace v8 {
       args.GetReturnValue().Set(args.This());
     } else {
       isolate->ThrowException(Exception::TypeError(
-          String::NewFromUtf8(isolate, "Don not use as a normal function.")));
+          String::NewFromUtf8(isolate, "Do not use as a normal function.")));
     }
   }
 
@@ -77,7 +78,7 @@ namespace v8 {
 
     if (args.Length() < 1) {
       // Throw an Error that is passed back to JavaScript
-      isolate->ThrowException(Exception::TypeError(
+      isolate->ThrowException(Exception::Error(
           String::NewFromUtf8(isolate, "Too few arguments: Except 1 but got 0. 'imagePath' is needed in arguments.")));
       return;
     }
