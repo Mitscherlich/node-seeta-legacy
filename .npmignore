@@ -67,3 +67,6 @@ models/
 # macOS desktop store files
 **/.DS_Store
 .DS_Store
+
+# LFW dataset
+benchmark/lfw/
