@@ -35,19 +35,7 @@ compile enviroment:
 
 ### Dependencies
 
-[OpenCV](https://github.com/opencv/opencv) is required to compile. You may use the following commands to install OpenCV:
-
-- `macOS`
-
-```bash
-$ brew install opecv
-```
-
-Use the following command to check this formula more details:
-
-```bash
-$ brew info opencv
-```
+[OpenCV](https://github.com/opencv/opencv) is required to compile.
 
 On `Linux` or `Windows`, we recommend to build OpenCV lib from source. See OpenCV installation tutorials for [Windows](https://docs.opencv.org/3.4.1/d3/d52/tutorial_windows_install.html) and [Linux](https://docs.opencv.org/3.4.1/d7/d9f/tutorial_linux_install.html).
 
@@ -85,7 +73,7 @@ $ npm i -S seeta
 ```bash
 $ npm i -S https://github.com/Mitscherlich/node-seeeta.git
 # or
-$ git clone -b stable --depth 1 https://github.com/Mitscherlich/node-seeeta.git node_modules/seeta
+$ git clone -b master --depth 1 https://github.com/Mitscherlich/node-seeeta.git node_modules/seeta
 ```
 
 ## Usage

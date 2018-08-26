@@ -31,19 +31,7 @@
 
 ### 依赖
 
-需要 [OpenCV](https://github.com/opencv/opencv)。你可以参考下面的命令来安装 OpenCV:
-
-- `macOS`
-
-```bash
-$ brew install opecv
-```
-
-你可以使用下面的命令了解更多关于使用 `Homebrew` 安装 `OpenCV` 的信息:
-
-```bash
-$ brew info opencv
-```
+需要 [OpenCV](https://github.com/opencv/opencv)。
 
 对于 `Linux` 或 `Windows` 平台, 我更推荐使用 OpenCV 源码构建安装. 参考 OpenCV 安装教程： [Windows](https://docs.opencv.org/3.4.1/d3/d52/tutorial_windows_install.html) [Linux](https://docs.opencv.org/3.4.1/d7/d9f/tutorial_linux_install.html).
 
@@ -81,7 +69,7 @@ $ npm i -S seeta
 ```bash
 $ npm i -S https://github.com/Mitscherlich/node-seeeta.git
 # 或者
-$ git clone -b stable --depth 1 https://github.com/Mitscherlich/node-seeeta.git node_modules/seeta
+$ git clone -b master --depth 1 https://github.com/Mitscherlich/node-seeeta.git node_modules/seeta
 ```
 
 ## 使用说明
