@@ -1,6 +1,7 @@
 language: node_js
 
 sudo: required
+dist: xenial
 
 branches:
   only:
@@ -17,75 +18,18 @@ cache:
   apt: true
   yarn: true
   directories:
+    - opencv
+    - protobuf
     - node_modules
 
 before_install:
   - sudo apt-get update
 
 install:
-  - sudo apt-get install -y build-essential
-  - sudo apt-get install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev libopenblas-dev
-  - sudo apt-get install -y python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
-  - git clone https://github.com/opencv/opencv.git --depth 1 -b 3.4
-  - cd opencv
-  - mkdir build && cd build
-  - cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local \
-    -DBZIP2_LIBRARIES=$BZIP2_INSTALL_PATH/lib/libbz2.a \
-    -DBUILD_DOCS=off \
-    -DBUILD_SHARED_LIBS=off \
-    -DBUILD_FAT_JAVA_LIB=off \
-    -DBUILD_TESTS=off \
-    -DBUILD_IPPICV=off \
-    -DBUILD_TIFF=on \
-    -DBUILD_JASPER=on \
-    -DBUILD_JPEG=on \
-    -DBUILD_OPENEXR=on \
-    -DBUILD_PNG=on \
-    -DBUILD_TIFF=on \
-    -DBUILD_ZLIB=on \
-    -DBUILD_opencv_apps=off \
-    -DBUILD_opencv_calib3d=off \
-    -DBUILD_opencv_contrib=off \
-    -DBUILD_opencv_dnn=off \
-    -DBUILD_opencv_features2d=off \
-    -DBUILD_opencv_flann=off \
-    -DBUILD_opencv_gpu=off \
-    -DBUILD_opencv_java=off \
-    -DBUILD_opencv_legacy=off \
-    -DBUILD_opencv_ml=off \
-    -DBUILD_opencv_nonfree=off \
-    -DBUILD_opencv_objdetect=off \
-    -DBUILD_opencv_ocl=off \
-    -DBUILD_opencv_photo=off \
-    -DBUILD_opencv_python=off \
-    -DBUILD_opencv_shape=off \
-    -DBUILD_opencv_stitching=off \
-    -DBUILD_opencv_superres=off \
-    -DBUILD_opencv_ts=off \
-    -DBUILD_opencv_video=off \
-    -DBUILD_opencv_videoio=off \
-    -DBUILD_opencv_videostab=off \
-    -DBUILD_opencv_world=off \
-    -DBUILD_opencv_lengcy=off \
-    -DBUILD_opencv_java_bindings_generator=off \
-    -DBUILD_opencv_python_bindings_generator=off \
-    -DWITH_1394=off \
-    -DWITH_EIGEN=off \
-    -DWITH_FFMPEG=off \
-    -DWITH_GIGEAPI=off \
-    -DWITH_GSTREAMER=off \
-    -DWITH_GTK=off \
-    -DWITH_PVAPI=off \
-    -DWITH_V4L=off \
-    -DWITH_LIBV4L=off \
-    -DWITH_CUDA=off \
-    -DWITH_CUFFT=off \
-    -DWITH_OPENCL=off \
-    -DWITH_OPENCLAMDBLAS=off \
-    -DWITH_OPENCLAMDFFT=off
-  - make -j4
-  - sudo make install -j4
-  - cd ../..
+  - sudo apt-get install -y build-essential dpkg-dev
+  - sudo apt-get install -y cmake git libopenblas-dev libprotobuf-dev libgnutls28-dev libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+  - sudo apt-get install -y python-dev python-numpy libjpeg-dev libpng-dev libtiff-dev libjasper-dev
+  - ./.travis.yml.sh
 
 script:
   - yarn install --pure-lockfile
