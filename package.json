@@ -1,10 +1,11 @@
 {
   "name": "seeta",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Node.js wrap for SeetaFaceEngine",
-  "main": "index.js",
+  "main": "lib/seeta.js",
   "scripts": {
-    "install": "ncmake rebuild",
+    "install": "node-gyp rebuild",
+    "postinstall": "node postinstall.js",
     "test": "DEBUG=seeta:test mocha -t 0 test/**/*.test.js",
     "benchmark": "DEBUG=seeta:benchmark mocha -t 0 benchmark/seeta.benchmark.js"
   },
@@ -13,9 +14,11 @@
     "url": "git+https://github.com/Mitscherlich/node-seeta.git"
   },
   "keywords": [
-    "SeetaFaceEngine",
     "seeta",
-    "addons"
+    "seetaface",
+    "seetafaceengine2",
+    "node",
+    "addon"
   ],
   "author": "Mitscherlich Wei <mitscherlich36+github@gmail.com>",
   "license": "MIT",
@@ -23,9 +26,11 @@
     "url": "https://github.com/Mitscherlich/node-seeta/issues"
   },
   "homepage": "https://github.com/Mitscherlich/node-seeta#README",
+  "os": [
+    "!darwin"
+  ],
   "devDependencies": {
     "mocha": "^5.2.0",
-    "node-cmake": "^2.5.1",
     "should": "^13.2.1"
   }
 }

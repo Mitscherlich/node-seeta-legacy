@@ -1,4 +1,16 @@
 # node-seeta
+
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+[![npm download][download-image]][download-url]
+
+[npm-image]: https://img.shields.io/npm/v/seeta.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/seeta
+[travis-image]: https://img.shields.io/travis/Mitscherlich/node-seeta.svg?style=flat-square
+[travis-url]: https://travis-ci.org/Mitscherlich/node-seeta
+[download-image]: https://img.shields.io/npm/dm/seeta.svg?style=flat-square
+[download-url]: https://npmjs.org/package/seeta
+
 Node.js wrap for [SeetaFaceEngine](https://github.com/seetaface/SeetaFaceEngine2).
 
 see other language version:
@@ -9,72 +21,18 @@ see other language version:
 
 ### System require
 
-- Ubuntu 16.04 x86_64
+|              | Ubuntu      | Windows    |
+|:------------:|:-----------:|:----------:|
+| version      | 16.04/18.04 | 7/8/8.1/10 |
+| arch         | x64         | x86/x86_64 |
+| minimum      | 1 GB        | 1 GB       |
+| recommend    | 2+GB        | 2+GB       |
+| build status | [![build status][travis-image]][travis-url] | [![build status][travis-image]][travis-url] |
 
-```yaml
-minium:
-  memory: 2GB
-  CPU: 1core with 1GHz
-  GPU: Not necessary
+### Download
 
-recommend:
-  memory: 4GB
-  CPU: 4core with 2.1GHz
-  GPU: if better
-```
-
-- Windows 10 (x86/x86_64)
-
-```yaml
-compile enviroment:
-  - Visual Studio 2013 / 2015 (msvc require v120 v140 or v141)
-  - minGW
-  - CMake for windows
-  - Node.js (lts/carbon)
-```
-
-### Dependencies
-
-[OpenCV](https://github.com/opencv/opencv) is required to compile.
-
-On `Linux` or `Windows`, we recommend to build OpenCV lib from source. See OpenCV installation tutorials for [Windows](https://docs.opencv.org/3.4.1/d3/d52/tutorial_windows_install.html) and [Linux](https://docs.opencv.org/3.4.1/d7/d9f/tutorial_linux_install.html).
-
-On Ubuntu, you also need install `libopenblas` first:
-
-```bash
-$ [sudo] apt install -y libopenblas-dev
-# or compile from source
-$ git clone https://github.com/xianyi/OpenBLAS.git
-$ cd OpenBLAS
-$ make
-$ [sudo] make PREFIX=/usr/local/OpenBLAS install
-```
-
-This module also requires [SeetaFaceEngine2](https://github.com/seetaface/SeetaFaceEngine2) models. You may manually down them from [HERE](https://pan.baidu.com/s/1HJj8PEnv3SOu6ZxVpAHPXg).
-
-### Installation
-
-0. install `node-cmake` for compiling
-
-make sure you have setup `cmake` correctly.
-
-```bash
-$ npm i -g node-cmake
-```
-
-1. via [npm.js](https://www.npmjs.com/package/seeta)
-
-```bash
-$ npm i -S seeta
-```
-
-2. via this repo
-
-```bash
-$ npm i -S https://github.com/Mitscherlich/node-seeeta.git
-# or
-$ git clone -b master --depth 1 https://github.com/Mitscherlich/node-seeeta.git node_modules/seeta
-```
+* Git tree: https://github.com/Mitscherlich/node-seeta.git
+  * Clone with `git clone https://github.com/Mitscherlich/node-seeta.git` :hammer: [Build instructions](https://github.com/Mitscherlich/node-seeta/wiki/Build).
 
 ## Usage
 

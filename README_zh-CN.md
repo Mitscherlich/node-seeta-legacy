@@ -1,76 +1,33 @@
 # node-seeta
+
+[![NPM version][npm-image]][npm-url]
+[![build status][travis-image]][travis-url]
+[![npm download][download-image]][download-url]
+
+[npm-image]: https://img.shields.io/npm/v/seeta.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/seeta
+[travis-image]: https://img.shields.io/travis/Mitscherlich/node-seeta.svg?style=flat-square
+[travis-url]: https://travis-ci.org/Mitscherlich/node-seeta
+[download-image]: https://img.shields.io/npm/dm/seeta.svg?style=flat-square
+[download-url]: https://npmjs.org/package/seeta
+
 [SeetaFaceEngine](https://github.com/seetaface/SeetaFaceEngine2) 的 Node.js 插件.
 
 ## 如何安装
 
 ### 系统需求
 
-- Ubuntu 16.04 x86_64
+|         | Ubuntu      | Windows    |
+|:-------:|:-----------:|:----------:|
+| 系统版本 | 16.04/18.04 | 7/8/8.1/10 |
+| 体系结构 | x64         | x86/x86_64 |
+| 最小配置 | 1 GB        | 1 GB       |
+| 推荐配置 | 2+GB        | 2+GB       |
 
-```yaml
-最低配置:
-  内存: 2GB
-  CPU: 1core with 1GHz
-  GPU: Not necessary
+### 下载安装
 
-推荐配置:
-  内存: 4GB
-  CPU: 4core with 2.1GHz
-  GPU: if better
-```
-
-- Windows 10 (x86/x86_64)
-
-```yaml
-编译环境:
-  - Visual Studio 2013 / 2015 (msvc 支持 v120 v140 or v141)
-  - minGW
-  - CMake for windows
-  - Node.js (lts/carbon)
-```
-
-### 依赖
-
-需要 [OpenCV](https://github.com/opencv/opencv)。
-
-对于 `Linux` 或 `Windows` 平台, 我更推荐使用 OpenCV 源码构建安装. 参考 OpenCV 安装教程： [Windows](https://docs.opencv.org/3.4.1/d3/d52/tutorial_windows_install.html) [Linux](https://docs.opencv.org/3.4.1/d7/d9f/tutorial_linux_install.html).
-
-在 Ubuntu 上, 你可能还需要安装 `libopenblas`:
-
-```bash
-$ [sudo] apt install -y libopenblas-dev
-# 或者从源码编译
-$ git clone https://github.com/xianyi/OpenBLAS.git
-$ cd OpenBLAS
-$ make
-$ [sudo] make PREFIX=/usr/local/OpenBLAS install
-```
-
-需要 [SeetaFaceEngine2](https://github.com/seetaface/SeetaFaceEngine2) 预编译的模型. 你可以从[这里](https://pan.baidu.com/s/1HJj8PEnv3SOu6ZxVpAHPXg)手动下载他们.
-
-### 安装
-
-0. 编译依赖 `node-cmake`
-
-请确保你以正确安装 `cmake`.
-
-```bash
-$ npm i -g node-cmake
-```
-
-1. 通过 [npm.js](https://www.npmjs.com/package/seeta)
-
-```bash
-$ npm i -S seeta
-```
-
-2. 通过本仓库
-
-```bash
-$ npm i -S https://github.com/Mitscherlich/node-seeeta.git
-# 或者
-$ git clone -b master --depth 1 https://github.com/Mitscherlich/node-seeeta.git node_modules/seeta
-```
+* Git tree: https://github.com/Mitscherlich/node-seeta.git
+  * 克隆仓库 `git clone https://github.com/Mitscherlich/node-seeta.git` :hammer: [构建指南]](https://github.com/Mitscherlich/node-seeta/wiki/Build).
 
 ## 使用说明
 
