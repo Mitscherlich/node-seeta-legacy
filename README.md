@@ -1,4 +1,4 @@
-# ![seeta logo](docs/seeta_logo.png) node-seeta
+# <center>![seeta logo](docs/seeta_logo.png)<br/>node-seeta</center>
 
 [![NPM version][npm-image]][npm-url]
 [![npm download][download-image]][download-url]

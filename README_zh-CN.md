@@ -1,8 +1,8 @@
-# ![seeta logo](docs/seeta_logo.png) node-seeta
+# <center>![seeta logo](docs/seeta_logo.png)<br/>node-seeta</center>
 
 [![NPM version][npm-image]][npm-url]
 [![npm download][download-image]][download-url]
-[![MIT License][license-image]][License]
+[![MIT License][license-image]](License)
 
 [npm-image]: https://img.shields.io/npm/v/seeta.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/seeta
@@ -15,7 +15,7 @@
 [SeetaFaceEngine](https://github.com/seetaface/SeetaFaceEngine2) 的 Node.js 插件.
 
 * **[示例](#examples)**
-* **[H如何安装](#how-to-install)**
+* **[如何安装](#how-to-install)**
 * **[使用说明](#usage)**
 
 <a name="examples"></a>
