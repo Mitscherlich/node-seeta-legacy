@@ -5,9 +5,7 @@
   "main": "lib/seeta.js",
   "scripts": {
     "install": "node-gyp rebuild",
-    "postinstall": "node postinstall.js",
-    "test": "DEBUG=seeta:test mocha -t 0 test/**/*.test.js",
-    "benchmark": "DEBUG=seeta:benchmark mocha -t 0 benchmark/seeta.benchmark.js"
+    "postinstall": "node postinstall.js"
   },
   "repository": {
     "type": "git",
@@ -29,8 +27,7 @@
   "os": [
     "!darwin"
   ],
-  "devDependencies": {
-    "mocha": "^5.2.0",
-    "should": "^13.2.1"
+  "dependencies": {
+    "nan": "^2.11.0"
   }
 }
