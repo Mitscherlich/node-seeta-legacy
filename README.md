@@ -1,8 +1,8 @@
-# node-seeta
+# ![seeta logo](docs/seeta_logo.png) node-seeta
 
 [![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
 [![npm download][download-image]][download-url]
+[![MIT License][license-image]](License)
 
 [npm-image]: https://img.shields.io/npm/v/seeta.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/seeta
@@ -10,16 +10,29 @@
 [travis-url]: https://travis-ci.org/Mitscherlich/node-seeta
 [download-image]: https://img.shields.io/npm/dm/seeta.svg?style=flat-square
 [download-url]: https://npmjs.org/package/seeta
+[license-image]: https://img.shields.io/badge/license-MIT-blue.svg?longCache=true&style=flat-square
 
 Node.js wrap for [SeetaFaceEngine](https://github.com/seetaface/SeetaFaceEngine2).
 
+* **[Examples](#examples)**
+* **[How to install](#how-to-install)**
+* **[Usage](#usage)**
+
 see other language version:
 
-- [中文](README_zh-CN.md)
+* [中文](README_zh-CN.md)
 
-## Install
+<a name="examples"></a>
 
-### System require
+# Examples
+
+See [examples](examples) for more implementations.
+
+<a name="how-to-install"></a>
+
+# How to install
+
+## System require
 
 |              | Ubuntu      | Windows    |
 |:------------:|:-----------:|:----------:|
@@ -29,14 +42,16 @@ see other language version:
 | recommend    | 2+GB        | 2+GB       |
 | build status | [![build status][travis-image]][travis-url] | [![build status][travis-image]][travis-url] |
 
-### Download
+## Download
 
 * Git tree: https://github.com/Mitscherlich/node-seeta.git
   * Clone with `git clone https://github.com/Mitscherlich/node-seeta.git` :hammer: [Build instructions](https://github.com/Mitscherlich/node-seeta/wiki/Build).
 
-## Usage
+<a name="usage"></a>
 
-### Face detection
+# Usage
+
+## Face detection
 
 Detect face(s) in a image.
 
@@ -64,7 +79,7 @@ console.log({ result })
 // }
 ```
 
-### Facial points detection
+## Facial points detection
 
 Mark facial points for compare and recognize.
 
@@ -94,7 +109,7 @@ if (faces.data && face.data.faces.length) {
 // }
 ```
 
-### Face recognize
+## Face recognize
 
 1. `1 vs 1` compare
 
@@ -174,6 +189,6 @@ if (result.data && result.data.length) {
 }
 ```
 
-## License
+# License
 
 [MIT](LICENSE)

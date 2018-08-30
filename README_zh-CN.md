@@ -1,8 +1,8 @@
-# node-seeta
+# ![seeta logo](docs/seeta_logo.png) node-seeta
 
 [![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
 [![npm download][download-image]][download-url]
+[![MIT License][license-image]][License]
 
 [npm-image]: https://img.shields.io/npm/v/seeta.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/seeta
@@ -10,12 +10,25 @@
 [travis-url]: https://travis-ci.org/Mitscherlich/node-seeta
 [download-image]: https://img.shields.io/npm/dm/seeta.svg?style=flat-square
 [download-url]: https://npmjs.org/package/seeta
+[license-image]: https://img.shields.io/badge/License-MIT-blue.svg?longCache=true&style=flat-square
 
 [SeetaFaceEngine](https://github.com/seetaface/SeetaFaceEngine2) 的 Node.js 插件.
 
-## 如何安装
+* **[示例](#examples)**
+* **[H如何安装](#how-to-install)**
+* **[使用说明](#usage)**
 
-### 系统需求
+<a name="examples"></a>
+
+# Examples
+
+查看 [examples](examples) 了解更多详情.
+
+<a name="how-to-install"></a>
+
+# 如何安装
+
+## 系统需求
 
 |         | Ubuntu      | Windows    |
 |:-------:|:-----------:|:----------:|
@@ -24,14 +37,16 @@
 | 最小配置 | 1 GB        | 1 GB       |
 | 推荐配置 | 2+GB        | 2+GB       |
 
-### 下载安装
+## 下载安装
 
-* Git tree: https://github.com/Mitscherlich/node-seeta.git
+* 源码地址: https://github.com/Mitscherlich/node-seeta.git
   * 克隆仓库 `git clone https://github.com/Mitscherlich/node-seeta.git` :hammer: [构建指南]](https://github.com/Mitscherlich/node-seeta/wiki/Build).
 
-## 使用说明
+<a name="usage"></a>
 
-### 人脸检测
+# 使用说明
+
+## 人脸检测
 
 检测图片中的人脸边界盒位置。
 
@@ -59,7 +74,7 @@ console.log({ result })
 // }
 ```
 
-### 面部特征点定位
+## 面部特征点定位
 
 标记图像中制定面孔的特征点 (5 点)
 
@@ -89,7 +104,7 @@ if (faces.data && face.data.faces.length) {
 // }
 ```
 
-### 人脸识别
+## 人脸识别
 
 1. `1 vs 1` 比较
 
@@ -169,6 +184,6 @@ if (result.data && result.data.length) {
 }
 ```
 
-## License
+# License
 
 [MIT](LICENSE)
