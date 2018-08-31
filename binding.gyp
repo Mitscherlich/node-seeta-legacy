@@ -18,7 +18,7 @@
       ],
       'conditions': [
         ['OS=="linux"', {
-          'cflags': [ '<!@(node utils/find-opencv.js --cflags)' ],
+          'cflags': [ '<!@(node utils/find-opencv.js --cflags)', '-fexceptions', '-frtti' ],
           'cflags!': [ '-fno-exceptions' ],
           'cflags_cc!': [ '-fno-rtti', '-fno-exceptions' ],
           'ldflags': [

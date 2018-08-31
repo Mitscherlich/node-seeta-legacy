@@ -39,4 +39,4 @@ console.timeEnd('Load detector');
 
 // detect sync
 console.log(detector.detectSync(images[0]));
-console.log(pointer.detectSync(images[0], detector));
+console.log(pointer.detectSync(images[0], detector).faces[0].points)
